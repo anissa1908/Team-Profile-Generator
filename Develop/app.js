@@ -13,6 +13,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const { type } = require("os");
 
 
 // Write code to use inquirer to gather information about the development team members,
@@ -20,6 +21,15 @@ const render = require("./lib/htmlRenderer");
 
 function promptUser() {
     return inquirer.prompt([
+
+        // prompt user for employee type, name, id, email
+        {
+            type: "input",
+            message: "What is your role with the company?",
+            name: "role",
+            choices: ['manager', 'engineer', 'intern']
+        },
+
         {
             type: "input",
             message: "What is your name?",
@@ -36,10 +46,11 @@ function promptUser() {
          {
             type: "input",
             message: "What is your role with the company?",
-            name: "role"
-    },
+            name: "role",
+            choices: ['manager', 'engineer', 'intern']
 
-        
+        },
+       
     ])
 }
 
