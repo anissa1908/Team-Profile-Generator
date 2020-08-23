@@ -43,24 +43,21 @@ function promptUser() {
             message: "What is your email?",
             name: "email"
         },
-         {
-            type: "input",
-            message: "What is your role with the company?",
-            name: "role",
-            choices: ['manager', 'engineer', 'intern']
-
-        },
        
     ])
 }
 
 
-
-
-
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
+
+function render(name, id, email, role)
+    this.name = name;
+    this.id = id;
+    this.email = email; 
+    this.role = role; 
+
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
