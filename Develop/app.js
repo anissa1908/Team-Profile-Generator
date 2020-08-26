@@ -73,7 +73,7 @@ function promptUser() {
            team.push(employee)
        })
 
-    })
+    }) 
     //  inquirer.prompt([
 
     //     {
