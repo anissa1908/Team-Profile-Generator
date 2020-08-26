@@ -1,12 +1,18 @@
 // TODO: Write code to define and export the Intern class.  HINT: This class should inherit from Employee.
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
-const inquirer = require("inquirer");
-const path = require("path");
-const fs = require("fs");
+const Employee = require("./Employee")
 
-const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-const render = require("./lib/htmlRenderer");
+class Intern extends Employee {
+    constructor (name, id, email, school) {
+        super(name,id,email, "Intern");
+        this.school = school
+        
+    }
+
+    getSchool(){
+        return this.school
+    }
+}
+
+
+module.exports = Intern

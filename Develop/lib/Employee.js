@@ -1,30 +1,17 @@
-// TODO: Write code to define and export the Employee class
-// const Manager = require("./lib/Manager");
-// const Engineer = require("./lib/Engineer");
-// const Intern = require("./lib/Intern");
-const inquirer = require("inquirer");
-// const path = require("path");
-// const fs = require("fs");
-
-// const OUTPUT_DIR = path.resolve(__dirname, "output");
-// const outputPath = path.join(OUTPUT_DIR, "team.html");
-
-// const render = require("./lib/htmlRenderer");
-
 
 class Employee {
-    constructor (name, id, email) {
+    constructor (name, id, email, role) {
         this.name = name;
         this.email = email;
         this.id = id;
-        this.role = role;
+        this.role = role || "Employee";
     }
 
     getName() {
         return this.name;
     }
 
-    getID() {
+    getId() {
         return this.id;
     }
 
@@ -33,6 +20,8 @@ class Employee {
     }
 
     getRole() {
-        return this.Employee;
+        return this.role;
     }
 }
+
+module.exports = Employee;

@@ -1,12 +1,18 @@
-// TODO: Write code to define and export the Manager class. HINT: This class should inherit from Employee.
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
-const inquirer = require("inquirer");
-const path = require("path");
-const fs = require("fs");
+// TODO: Write code to define and export the StorageManager class.  HINT: This class should inherit from Employee.
+const Employee = require("./Employee")
 
-const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-const render = require("./lib/htmlRenderer");
+class Manager extends Employee {
+    constructor (name, id, email, OfficeNumber) {
+        super(name,id,email, "Manager");
+        this.officeNumber = OfficeNumber
+        
+    }
+    
+    getOfficeNumber(){
+        return this.officeNumber
+    }
+}
+
+
+module.exports = Manager
